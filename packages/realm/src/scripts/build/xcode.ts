@@ -25,6 +25,8 @@ import { PACKAGE_PATH } from "./common";
 const { env } = process;
 
 export const SUPPORTED_PLATFORMS = [
+  "apappletvos",
+  "appletvsimulator",
   "iphoneos",
   "iphonesimulator",
   "macosx",

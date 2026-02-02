@@ -26,8 +26,6 @@ import path from "node:path";
 
 import { globSync } from "glob";
 
-import type { XcodeSDKName } from "./xcode";
-import { ARCHIVE_INSTALL_PATH, SUPPORTED_PLATFORMS, xcode } from "./xcode";
 import {
   PACKAGE_PATH,
   REALM_CORE_LIBRARY_NAMES_ALLOWLIST,
@@ -36,6 +34,8 @@ import {
   collectHeaders as commonCollectHeaders,
   ensureDirectory,
 } from "./common";
+import type { XcodeSDKName } from "./xcode";
+import { ARCHIVE_INSTALL_PATH, SUPPORTED_PLATFORMS, xcode } from "./xcode";
 
 const EXPECTED_XCODE_VERSION = "15.4";
 
@@ -51,6 +51,8 @@ const REALM_CORE_PRODUCTS_INSTALL_PATH = `Products${ARCHIVE_INSTALL_PATH}`;
 const XCFRAMEWORK_PATH = path.resolve(PACKAGE_PATH, "prebuilds/apple/realm-core.xcframework");
 
 const APPLE_DESTINATIONS_PR_PLATFORM = new Map<XcodeSDKName, string[]>([
+  ["appletvos", ["generic/platform=tvOS"]],
+  ["appletvsimulator", ["generic/platform=tvOS Simulator"]],
   ["iphoneos", ["generic/platform=iOS"]],
   ["iphonesimulator", ["generic/platform=iOS Simulator"]],
   ["macosx", ["generic/platform=macOS,variant=Mac Catalyst"]],

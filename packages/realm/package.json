@@ -251,6 +251,7 @@
     }
   },
   "devDependencies": {
+    "wireit": "^0.14.12",
     "@babel/cli": "^7.23.9",
     "@babel/core": "^7.23.9",
     "@babel/plugin-transform-modules-commonjs": "^7.23.3",
